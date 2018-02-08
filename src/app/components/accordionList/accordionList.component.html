@@ -1,0 +1,13 @@
+<ngb-accordion #acc="ngbAccordion">
+    <ngb-panel title="{{title}}">
+      <ng-template ngbPanelContent>
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-action" *ngFor="let item of items" placement="top" ngbTooltip="{{item.tooltip}}"
+            (click)="goTo(item.href)">
+            <img *ngIf="item.ico" src="../assets/{{item.ico}}" style="width:24px; height:24px;" class="mr-1 float-left" alt=""> {{item.title}}
+            <i class="float-right mt-1 fas fa-arrow-right"></i>
+          </li>
+        </ul>
+      </ng-template>
+    </ngb-panel>
+  </ngb-accordion>

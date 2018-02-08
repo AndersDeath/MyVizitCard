@@ -1,0 +1,53 @@
+<div class="container mt-2">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="card" style="width: 100%;">
+        <div class="card-body">
+          <h3 class="card-title">Большаков Владимир Николаевич</h3>
+          <h5>Резюме</h5>
+          <div class="mb-2">
+            <a href="https://spb.hh.ru/resume/d20d4b33ff01a74bd10039ed1f775348683346" target="_blank" class="btn btn-light">
+              <img src="../assets/hh.png" width="20" /> HeadHunter.ru
+            </a>
+            <a href="https://www.linkedin.com/in/vladimir-bolshakov-401bb686/" target="_blank" class="btn btn-light">
+              <img src="../assets/linkedin.png" width="20" /> LinkedIn.com
+            </a>
+          </div>
+          <hr>
+          <h5>Рубрика GitHub</h5>
+          <div class="mb-2">
+            <a href="https://github.com/AndersDeath" target="_blank" class="btn btn-light">
+              <img src="../assets/github.png" width="20" /> Профиль на GitHub
+            </a>
+          </div>
+          <app-accordion-list [title]="'Список репозиториев с примерами на GitHub'" [items]="gitHubData"></app-accordion-list>
+          <hr>
+          <h5>Рубрика портфолио</h5>
+          <app-accordion-list [title]="'Мобильные приложения'" [items]="mobileList"></app-accordion-list>
+          <app-accordion-list [title]="'Сайты'" [items]="siteList"></app-accordion-list>
+          <hr>
+          <h5>Работал с компаниями</h5>
+          <div class="text-center">
+            <img src="../assets/autodesk.png" height="120" alt="">
+            <img src="../assets/kodeks.jpg" height="70" alt="">
+            <img src="../assets/assentlogo.png" alt="">
+          </div>
+          <hr>
+          <h5>
+            Контакты:
+          </h5>
+          <ul>
+            <li>Почта -
+              <a href="mailto:andersdeath@yandex.ru">andersdeath@yandex.ru</a>
+            </li>
+            <li>Скайп - vladnbol</li>
+          </ul>
+          <div class="text-right">
+            Визитка: v.1.0.0
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
