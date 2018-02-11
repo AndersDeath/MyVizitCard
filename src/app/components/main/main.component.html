@@ -27,6 +27,17 @@
           <app-accordion-list [title]="'Мобильные приложения'" [items]="mobileList"></app-accordion-list>
           <app-accordion-list [title]="'Сайты'" [items]="siteList"></app-accordion-list>
           <hr>
+          <h5>Рубрика технологии</h5>
+          <ngb-accordion #acc="ngbAccordion">
+            <ngb-panel title="Список (по клику на название технологии откроется подсказка)">
+              <ng-template ngbPanelContent>
+                <button  *ngFor="let item of skillsArr" (click)="search(item)" target="_blank" class="btn btn-light">
+                  {{ item }}
+                </button>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+          <hr>
           <h5>Работал с компаниями</h5>
           <div class="text-center">
             <img src="../assets/autodesk.png" height="120" alt="">
@@ -44,7 +55,7 @@
             <li>Скайп - vladnbol</li>
           </ul>
           <div class="text-right">
-            Визитка: v.1.0.0
+            Визитка: v.1.1.0
           </div>
         </div>
       </div>

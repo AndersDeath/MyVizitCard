@@ -10,16 +10,22 @@ export class MainComponent {
   gitHubData: any[];
   mobileList: any[];
   siteList: any[];
-
+  skillsArr: any[];
   constructor(private data: DataService) {
 
   }
   ngOnInit(): void {
-    this.gitHubData = this.data.getGitHubData();
-    this.mobileList = this.data.getMobileList();
-    this.siteList = this.data.getSiteList();
+    this.data.getData().subscribe(data => {
+      this.gitHubData = data['links']['github'];
+      this.mobileList = data['links']['mobile'];
+      this.siteList = data['links']['site'];
+      this.skillsArr = data['skills'];
+    });
   }
   goTo(href) {
     window.open(href, '_blank');
+  }
+  search(text){
+    window.open('https://yandex.ru/search/?text=Что такое ' + text + '? Технология. Википедия', '_blank');
   }
 }
