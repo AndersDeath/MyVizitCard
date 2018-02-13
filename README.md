@@ -11,7 +11,8 @@
 ## Глава 3: Что под капотом?
 
 1. Angular 5
-2. Bootstrap 4
+2. ~~Bootstrap 4~~ (удален)
+3. Angular Material
 
 ## Глава 4: Как установить?
 
