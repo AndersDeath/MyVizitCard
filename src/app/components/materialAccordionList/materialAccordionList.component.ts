@@ -2,12 +2,12 @@ import { Component, Input } from '@angular/core';
 import { DataService } from '../../services/data.service';
 
 @Component({
-    selector: 'app-accordion-list',
-    templateUrl: './accordionList.component.html',
-    styleUrls: ['./accordionList.component.sass']
+    selector: 'app-material-accordion-list',
+    templateUrl: './materialAccordionList.component.html',
+    styleUrls: ['./materialAccordionList.component.sass']
 })
 
-export class AccordionListComponent {
+export class MaterialAccordionListComponent {
     @Input() items: object;
     @Input() title: string;
     constructor() {

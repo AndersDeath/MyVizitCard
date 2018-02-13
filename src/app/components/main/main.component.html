@@ -1,64 +1,55 @@
-<div class="container mt-2">
-  <div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
-      <div class="card" style="width: 100%;">
-        <div class="card-body">
-          <h3 class="card-title">Большаков Владимир Николаевич</h3>
-          <h5>Резюме</h5>
-          <div class="mb-2">
-            <a href="https://spb.hh.ru/resume/d20d4b33ff01a74bd10039ed1f775348683346" target="_blank" class="btn btn-light">
-              <img src="../assets/hh.png" width="20" /> HeadHunter.ru
-            </a>
-            <a href="https://www.linkedin.com/in/vladimir-bolshakov-401bb686/" target="_blank" class="btn btn-light">
-              <img src="../assets/linkedin.png" width="20" /> LinkedIn.com
-            </a>
-          </div>
-          <hr>
-          <h5>Рубрика GitHub</h5>
-          <div class="mb-2">
-            <a href="https://github.com/AndersDeath" target="_blank" class="btn btn-light">
-              <img src="../assets/github.png" width="20" /> Профиль на GitHub
-            </a>
-          </div>
-          <app-accordion-list [title]="'Список репозиториев с примерами на GitHub'" [items]="gitHubData"></app-accordion-list>
-          <hr>
-          <h5>Рубрика портфолио</h5>
-          <app-accordion-list [title]="'Мобильные приложения'" [items]="mobileList"></app-accordion-list>
-          <app-accordion-list [title]="'Сайты'" [items]="siteList"></app-accordion-list>
-          <hr>
-          <h5>Рубрика технологии</h5>
-          <ngb-accordion #acc="ngbAccordion">
-            <ngb-panel title="Список (по клику на название технологии откроется подсказка)">
-              <ng-template ngbPanelContent>
-                <button  *ngFor="let item of skillsArr" (click)="search(item)" target="_blank" class="btn btn-light">
-                  {{ item }}
-                </button>
-              </ng-template>
-            </ngb-panel>
-          </ngb-accordion>
-          <hr>
-          <h5>Работал с компаниями</h5>
-          <div class="text-center">
-            <img src="../assets/autodesk.png" height="120" alt="">
-            <img src="../assets/kodeks.jpg" height="70" alt="">
-            <img src="../assets/assentlogo.png" alt="">
-          </div>
-          <hr>
-          <h5>
-            Контакты:
-          </h5>
-          <ul>
-            <li>Почта -
-              <a href="mailto:andersdeath@yandex.ru">andersdeath@yandex.ru</a>
-            </li>
-            <li>Скайп - vladnbol</li>
-          </ul>
-          <div class="text-right">
-            Визитка: v.1.1.0
-          </div>
-        </div>
-      </div>
-    </div>
+<mat-card class="main-card">
+  <h2>Большаков Владимир Николаевич</h2>
+  <mat-divider></mat-divider>
+  <h3 class="mt40">Резюме</h3>
+  <a mat-raised-button href="https://spb.hh.ru/resume/d20d4b33ff01a74bd10039ed1f775348683346" target="_blank">
+    <img src="../assets/hh.png" width="20" /> HeadHunter.ru </a>
+  <a mat-raised-button href="https://www.linkedin.com/in/vladimir-bolshakov-401bb686/" target="_blank">
+    <img src="../assets/linkedin.png" width="20" /> LinkedIn.com </a>
+  <span class="px40"></span>
+  <mat-divider></mat-divider>
+  <h3 class="mt40">Рубрика GitHub</h3>
+  <a mat-raised-button href="https://github.com/AndersDeath" target="_blank">
+    <img src="../assets/github.png" width="20" /> Профиль на GitHub</a>
+  <span class="px20"></span>
+  <app-material-accordion-list [title]="'Список репозиториев с примерами на GitHub'" [items]="gitHubData"></app-material-accordion-list>
+  <span class="px40"></span>
+  <mat-divider></mat-divider>
+  <h3 class="mt40">Рубрика портфолио</h3>
+  <app-material-accordion-list [title]="'Мобильные приложения'" [items]="mobileList"></app-material-accordion-list>
+  <app-material-accordion-list [title]="'Сайты'" [items]="siteList"></app-material-accordion-list>
+  <span class="px40"></span>
+  <mat-divider></mat-divider>
+  <h3 class="mt40">Рубрика технологии</h3>
+  <mat-accordion class="button-list">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h4>Список (по клику на название технологии откроется подсказка)</h4>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <button mat-raised-button *ngFor="let item of skillsArr" (click)="search(item)" target="_blank" class="btn btn-light">
+        {{ item }}
+      </button>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <span class="px40"></span>
+  <mat-divider></mat-divider>
+  <h3 class="mt40">Работал с компаниями</h3>
+  <div style="text-align:center">
+    <img src="../assets/autodesk.png" height="120" alt="">
+    <img src="../assets/kodeks.jpg" style="margin-bottom:25px;" height="70" alt="">
+    <img src="../assets/assentlogo.png" style="margin-bottom:25px;" alt="">
   </div>
-</div>
+  <mat-divider></mat-divider>
+  <h3 class="mt40">Контакты</h3>
+  <ul>
+    <li>Почта -
+      <a href="mailto:andersdeath@yandex.ru">andersdeath@yandex.ru</a>
+    </li>
+    <li>Скайп - vladnbol</li>
+  </ul>
+  <div style="text-align:right">
+    Визитка: v.1.2.0
+  </div>
+</mat-card>

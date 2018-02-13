@@ -3,7 +3,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable()
 export class DataService {
-    apiUrl: string = '';
+    apiUrl: string = 'http://course.loc/link/';
     constructor(private http: HttpClient) {
 
     }
