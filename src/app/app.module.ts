@@ -20,7 +20,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
-import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { DataService } from './services/data.service';
 
@@ -47,7 +46,6 @@ import { DataService } from './services/data.service';
     MatRadioModule,
     MatMenuModule,
     MatIconModule,
-    MatSidenavModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [DataService],
