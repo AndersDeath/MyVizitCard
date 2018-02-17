@@ -34,8 +34,18 @@
     <button mat-button (click)="sidenav.toggle()" style="float:right">Закрыть</button>
   </div>
   <div>
-    <mat-list>
-      <mat-list-item>Здесь будет история запросов</mat-list-item>
+    <mat-list *ngFor="let item of searchHistory"  (click)="searchFromHistory(item.text, item.type)">
+      <mat-list-item>
+        <table>
+          <tr>
+            <td> {{item.type[0]}}: {{item.text}}</td>
+          </tr>
+          <tr>
+            <td style="font-size:10px"> {{item.date | date:'HH:mm dd-MM-yyyy'}}
+            </td>
+          </tr>
+        </table>
+      </mat-list-item>
       <mat-divider></mat-divider>
     </mat-list>
   </div>

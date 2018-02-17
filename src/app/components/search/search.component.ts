@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { DataService } from '../../services/data.service';
+import { DatePipe } from '@angular/common';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -8,12 +11,13 @@ export class SearchComponent {
   AlignerHeight: any;
   searchValue: string;
   searchToggle: string = 'yandexSearch';
-  last10Requests: any[];
-  constructor() {
+  searchHistory: any;
+  constructor(private data: DataService) {
 
   }
   ngOnInit(): void {
     this.setAlignerHeight();
+    this.searchValue = '';
     window.addEventListener("resize", () => {
       this.setAlignerHeight();
     });
@@ -22,20 +26,33 @@ export class SearchComponent {
         this.startSearch();
       }
     });
-
+    this.data.getSearchHistory().subscribe(res => {
+      this.searchHistory = res;
+      console.log(res)
+    });
   }
   startSearch() {
+    let typeId;
     if (this.searchToggle === "yandexSearch") {
       window.open('https://yandex.ru/search/?text=' + this.searchValue, '_blank');
+      typeId = "2";
     }
     if (this.searchToggle === "googleSearch") {
       window.open('https://www.google.ru/#newwindow=1&q=' + this.searchValue, '_blank');
+      typeId = "1";
     }
+    this.data.setSearchHistory(this.searchValue, typeId).subscribe(res => console.log(res))
     this.searchValue = '';
     return;
   }
-  search(text) {
-    window.open('https://yandex.ru/search/?text=Что такое ' + text + '? Технология. Википедия', '_blank');
+  searchFromHistory(text,type){
+    if (type === "yandex") {
+      window.open('https://yandex.ru/search/?text=' + text, '_blank');
+    }
+    if (type === "google") {
+      window.open('https://www.google.ru/#newwindow=1&q=' + text, '_blank');
+    }
+    return;
   }
   setAlignerHeight() {
     this.AlignerHeight = window.innerHeight - 120;
