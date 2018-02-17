@@ -28,7 +28,7 @@ export class SearchComponent {
     });
     this.data.getSearchHistory().subscribe(res => {
       this.searchHistory = res;
-      console.log(res)
+      this.searchHistory = this.searchHistory.slice(0,10);
     });
   }
   startSearch() {
