@@ -9,6 +9,7 @@ import { AutofocusDirective } from './directives/autofocus.directive';
 import { AppComponent } from './components/app/app.component';
 import { MainComponent } from './components/main/main.component';
 import { SearchComponent } from './components/search/search.component';
+import { SitePageComponent } from './components/sitepage/sitePage.component';
 import { MaterialAccordionListComponent } from './components/materialAccordionList/materialAccordionList.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -29,6 +30,7 @@ import { DataService } from './services/data.service';
     AutofocusDirective,
     AppComponent,
     SearchComponent,
+    SitePageComponent,
     MaterialAccordionListComponent
   ],
   imports: [
