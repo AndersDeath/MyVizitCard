@@ -1,6 +1,6 @@
 {
-  "name": "vnbhelper2",
-  "version": "0.0.0",
+  "name": "vizitka",
+  "version": "1.2.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
