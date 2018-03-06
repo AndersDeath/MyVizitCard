@@ -8,13 +8,23 @@ import { appRoutes } from './constants/route.constant';
 import { AutofocusDirective } from './directives/autofocus.directive';
 import { AppComponent } from './components/app/app.component';
 import { MainComponent } from './components/main/main.component';
+
 import { MaterialAccordionListComponent } from './components/materialAccordionList/materialAccordionList.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatButtonModule } from '@angular/material/button';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatListModule } from '@angular/material/list';
-import { MatTooltipModule } from '@angular/material/tooltip';
+
+import {
+  MatCardModule,
+  MatDividerModule,
+  MatButtonModule,
+  MatExpansionModule,
+  MatListModule,
+  MatTooltipModule,
+  MatInputModule,
+  MatRadioModule,
+  MatMenuModule,
+  MatIconModule,
+  MatGridListModule
+} from '@angular/material';
+
 import { DataService } from './services/data.service';
 
 @NgModule({
@@ -22,7 +32,7 @@ import { DataService } from './services/data.service';
     MainComponent,
     AutofocusDirective,
     AppComponent,
-    MaterialAccordionListComponent
+    MaterialAccordionListComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +45,11 @@ import { DataService } from './services/data.service';
     MatExpansionModule,
     MatListModule,
     MatTooltipModule,
+    MatInputModule,
+    MatRadioModule,
+    MatMenuModule,
+    MatIconModule,
+    MatGridListModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [DataService],
