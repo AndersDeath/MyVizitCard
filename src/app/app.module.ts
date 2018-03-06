@@ -8,19 +8,22 @@ import { appRoutes } from './constants/route.constant';
 import { AutofocusDirective } from './directives/autofocus.directive';
 import { AppComponent } from './components/app/app.component';
 import { MainComponent } from './components/main/main.component';
-import { SearchComponent } from './components/search/search.component';
-import { SitePageComponent } from './components/sitepage/sitePage.component';
+
 import { MaterialAccordionListComponent } from './components/materialAccordionList/materialAccordionList.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatButtonModule } from '@angular/material/button';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatListModule } from '@angular/material/list';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
+
+import {
+  MatCardModule,
+  MatDividerModule,
+  MatButtonModule,
+  MatExpansionModule,
+  MatListModule,
+  MatTooltipModule,
+  MatInputModule,
+  MatRadioModule,
+  MatMenuModule,
+  MatIconModule,
+  MatGridListModule
+} from '@angular/material';
 
 import { DataService } from './services/data.service';
 
@@ -29,9 +32,7 @@ import { DataService } from './services/data.service';
     MainComponent,
     AutofocusDirective,
     AppComponent,
-    SearchComponent,
-    SitePageComponent,
-    MaterialAccordionListComponent
+    MaterialAccordionListComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +49,7 @@ import { DataService } from './services/data.service';
     MatRadioModule,
     MatMenuModule,
     MatIconModule,
+    MatGridListModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [DataService],

@@ -19,7 +19,6 @@ export class MainComponent {
       this.gitHubData = data['links']['github'];
       this.mobileList = data['links']['mobile'];
       this.siteList = data['links']['site'];
-      console.log(JSON.stringify(this.mobileList));
       this.skillsArr = data['skills'];
     });
   }

@@ -3,25 +3,25 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable()
 export class DataService {
-    apiUrl: string = 'http://course.loc/';
-    constructor(private http: HttpClient) {
+  apiUrl: string = 'http://api.vnbstudio.ru/';
+  constructor(private http: HttpClient) {
 
-    }
+  }
 
-    public getData() {
-        return this.http.get(this.apiUrl + 'link/');
-    }
+  public getData() {
+    return this.http.get(this.apiUrl + 'link/');
+  }
 
-    public getSearchHistory() {
-        return this.http.get(this.apiUrl + 'search/get/');
-    }
+  public getSearchHistory() {
+    return this.http.get(this.apiUrl + 'search/get/');
+  }
 
-    public setSearchHistory(text: string, typeId: string) {
-        const options =
-            {
-                params: new HttpParams().set('text', text).set('type', typeId),
-            };
+  public setSearchHistory(text: string, typeId: string) {
+    const options =
+      {
+        params: new HttpParams().set('text', text).set('type', typeId),
+      };
 
-        return this.http.get(this.apiUrl + 'search/set/', options);
-    }
+    return this.http.get(this.apiUrl + 'search/set/', options);
+  }
 }
