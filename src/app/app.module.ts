@@ -25,6 +25,7 @@ import {
   MatGridListModule
 } from '@angular/material';
 
+import { PathService } from './services/path.service';
 import { DataService } from './services/data.service';
 
 @NgModule({
@@ -52,7 +53,7 @@ import { DataService } from './services/data.service';
     MatGridListModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [DataService],
+  providers: [DataService,PathService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

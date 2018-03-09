@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { PathService} from '../../services/path.service';
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.sass']
 })
 export class MainComponent {
-
+  url: string = 'http://course.loc/img/';
   gitHubData: any[];
   mobileList: any[];
   siteList: any[];
   skillsArr: any[];
-  constructor(private data: DataService) {
-
+  constructor(private data: DataService, private path: PathService) {
+      this.url = this.path.getStorage();
   }
   ngOnInit(): void {
     this.data.getData().subscribe(data => {
